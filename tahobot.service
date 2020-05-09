@@ -1,0 +1,14 @@
+[Unit]
+Description=TAHOKONTROL BOT
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/adwiz/PycharmProjects/Teleg
+ExecStart=/home/adwiz/PycharmProjects/Teleg/bot.py
+KillMode=process
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
