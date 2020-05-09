@@ -22,13 +22,13 @@ def welcome(message):
     bot.send_sticker(message.chat.id, sti)
     # KEYBOARD
     markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
-    item1 = types.KeyboardButton('Карты водителя?')
-    item2 = types.KeyboardButton('Тахографы?')
+    item1 = types.KeyboardButton('Карты водителя')
+    item2 = types.KeyboardButton('Тахографы')
 
     markup.add(item1, item2)
 
     bot.send_message(message.chat.id, 'Добро пожаловать, {0.first_name}!\nЯ - <b>{1.first_name} бот</b>,\
-    чем могу помочь?'.format(message.from_user, bot.get_me()), parse_mode='html', reply_markup=markup)
+    что вас интересует?'.format(message.from_user, bot.get_me()), parse_mode='html', reply_markup=markup)
 
 
 @bot.message_handler(content_types=['text'])
@@ -38,19 +38,24 @@ def lalala(message):
     на то, что пишется в телеграме.
     """
     if message.chat.type == 'private':
-        if message.text == 'Карты водителя?':
-            bot.send_message(message.chat.id, str('ЕСТР или СКЗИ?'))
-        elif message.text == 'Тахографы?':
-
+        if message.text.lower() == 'карты водителя':
             markup = types.InlineKeyboardMarkup(row_width=2)
-            item1 = types.InlineKeyboardButton('Хорошо', callback_data='good')
-            item2 = types.InlineKeyboardButton('Не очень', callback_data='bad')
+            item1 = types.InlineKeyboardButton('ЕСТР 3500₽.', callback_data='estr')
+            item2 = types.InlineKeyboardButton('СКЗИ 3500₽.', callback_data='skzi')
+
+            markup.add(item1, item2)
+            bot.send_message(message.chat.id, 'Закажем карту?', reply_markup=markup)
+
+        elif message.text.lower() == 'тахографы':
+            markup = types.InlineKeyboardMarkup(row_width=2)
+            item1 = types.InlineKeyboardButton('Новый тахограф', callback_data='new')
+            item2 = types.InlineKeyboardButton('БУ тахограф', callback_data='used')
 
             markup.add(item1, item2)
 
-            bot.send_message(message.chat.id, 'Отлично, как сам?', reply_markup=markup)
+            bot.send_message(message.chat.id, 'Закажем тахограф?', reply_markup=markup)
         else:
-            bot.send_message(message.chat.id, 'Я не знаю, что ответить 😢')
+            bot.send_message(message.chat.id, 'У вас другой вопрос?')
 
 
 @bot.callback_query_handler(func=lambda call: True)
@@ -61,10 +66,12 @@ def callback_inline(call):
     """
     try:
         if call.message:
-            if call.data == 'good':
-                bot.send_message(call.message.chat.id, 'Вот и отлично')
-            elif call.data == 'bad':
-                bot.send_message(call.message.chat.id, 'Бывает 😢')
+            if call.data == 'estr':
+                bot.send_message(call.message.chat.id, 'Закажем ЕСТР?')
+                if call.message.text.lower() == 'да':
+                    bot.send_message(call.message.chat.id, 'Оставьте номер телефона')
+            elif call.data == 'skzi':
+                bot.send_message(call.message.chat.id, 'Закажем СКЗИ?')
             # remove inline buttons
             bot.edit_message_text(chat_id=call.message.chat.id, text='Как дела?', reply_markup=None)
             # show alert
