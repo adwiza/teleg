@@ -6,7 +6,7 @@ from telebot import types
 
 logging.basicConfig(level=logging.DEBUG,
                     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
-ip = '96.96.33.133'
+ip = '207.97.174.134'
 port = '1080'
 apihelper.proxy = {'https': 'socks5://{}:{}'.format(ip, port)}
 bot = telebot.TeleBot(config.TOKEN)
