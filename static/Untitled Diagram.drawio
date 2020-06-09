@@ -1,4 +1,4 @@
-<mxfile modified="2020-06-09T16:04:50.057Z" host="app.diagrams.net" agent="5.0 (Windows)" etag="aaf1ALo_dIZnSIqUWzCL" version="13.2.0" type="github" pages="3">
+<mxfile modified="2020-06-09T16:05:29.775Z" host="app.diagrams.net" agent="5.0 (Windows)" etag="8uHCBBKbDT_ka2OX5jYG" version="13.2.0" type="github" pages="3">
   <diagram id="WI9T0HZ2pTsCkuznbFz-" name="Page-1">
     <mxGraphModel dx="1422" dy="735" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -602,8 +602,14 @@
         <mxCell id="9-cmXUhUi9A2ASZqGryK-17" value="VRRP" style="text;html=1;resizable=0;autosize=1;align=center;verticalAlign=middle;points=[];fillColor=none;strokeColor=none;rounded=0;" vertex="1" parent="HgT05sSb6LrkyLWi5eaY-1">
           <mxGeometry x="489" y="150" width="50" height="20" as="geometry" />
         </mxCell>
+        <mxCell id="9UjrlRRTFkhtqQW_SVrv-1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="HgT05sSb6LrkyLWi5eaY-1" source="9-cmXUhUi9A2ASZqGryK-18" target="9UjrlRRTFkhtqQW_SVrv-0">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
         <mxCell id="9-cmXUhUi9A2ASZqGryK-18" value="L3VPN MLPS" style="text;html=1;resizable=0;autosize=1;align=center;verticalAlign=middle;points=[];fillColor=none;strokeColor=none;rounded=0;" vertex="1" parent="HgT05sSb6LrkyLWi5eaY-1">
           <mxGeometry x="469" y="80" width="90" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="9UjrlRRTFkhtqQW_SVrv-0" value="ЦОД 1,2 link" style="text;html=1;resizable=0;autosize=1;align=center;verticalAlign=middle;points=[];fillColor=none;strokeColor=none;rounded=0;" vertex="1" parent="HgT05sSb6LrkyLWi5eaY-1">
+          <mxGeometry x="474" y="10" width="80" height="20" as="geometry" />
         </mxCell>
         <mxCell id="9-cmXUhUi9A2ASZqGryK-19" value="" style="html=1;dashed=0;whitespace=wrap;fillColor=#2875E2;strokeColor=#ffffff;points=[[0.005,0.63,0],[0.1,0.2,0],[0.9,0.2,0],[0.5,0,0],[0.995,0.63,0],[0.72,0.99,0],[0.5,1,0],[0.28,0.99,0]];shape=mxgraph.kubernetes.icon;prIcon=ing" vertex="1" parent="HgT05sSb6LrkyLWi5eaY-1">
           <mxGeometry x="144.26" y="452" width="58.24" height="44" as="geometry" />
