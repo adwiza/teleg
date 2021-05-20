@@ -1,5 +1,14 @@
 import requests
 
+from settings import TOKEN, CHAT_ID
 
-print(
-    requests.get('https://api.telegram.org/bot1597418329:AAH1a5n8QABe7LoXpat3biZnG8DeJFdsF9g/getMe').json())
+
+server = 'https://api.telegram.org'
+endpoint = 'sendMessage'
+
+url = server + '/' + TOKEN + '/' + endpoint
+
+response = requests.post(url, json={'text': 'Привет из питона в группу мои боты', 'chat_id': CHAT_ID})
+
+if response.status_code == 200:
+    print(response.json())
