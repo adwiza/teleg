@@ -1,4 +1,3 @@
-import random
 import telepot
 import random as r
 
@@ -36,13 +35,11 @@ def generate_prophecies():
 
 
 text_horoscope = generate_prophecies()
-s = random.randint(0, 5)
-text2 = text_horoscope[s]
-print(text2)
+s = r.randint(0, 5)
+horo_text = text_horoscope[s]
 for item in last_update:
     if item.get('message'):
         if 'text' in item['message']:
             text = item['message']['text']
-            if text.startswith("/fortune"):
-
-                message = bot.sendMessage(chat_id=CHAT_ID, text=text2)
+            if text.startswith("/horo"):
+                message = bot.sendMessage(chat_id=CHAT_ID, text=horo_text)
