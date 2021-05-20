@@ -37,11 +37,12 @@ def generate_prophecies():
 
 text_horoscope = generate_prophecies()
 s = random.randint(0, 5)
-text = text_horoscope[s]
-print(text)
+text2 = text_horoscope[s]
+print(text2)
 for item in last_update:
-    if item.get('message') and item.get('message_id') != 0:
+    if item.get('message'):
         if 'text' in item['message']:
             text = item['message']['text']
             if text.startswith("/fortune"):
-                message = bot.sendMessage(chat_id=CHAT_ID, text=text)
+
+                message = bot.sendMessage(chat_id=CHAT_ID, text=text2)
