@@ -1,8 +1,5 @@
 from trello import TrelloClient
 
-KEY = 'ffba680bac049b6e80eac080de3ff457'
-SECRET = '159debd0c390f8884edc00a44e08b97eded6bef59fb90d976fa6cf9b96e28873'
-
 client = TrelloClient(api_key=KEY, api_secret=SECRET)
 print(client.list_boards())
 
